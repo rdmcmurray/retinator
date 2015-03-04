@@ -101,14 +101,14 @@
                                 <div class="col-md-3 col-sm-6 col-xs-6">
                                     <div class="input-group input-group-sm">
                                         <span class="input-group-addon" style="background: #fff;">min pt</span>
-                                        <input type="text" class="form-control" id="input_gmin">
+                                        <input type="number" class="form-control" id="input_gmin">
                                     </div>    
                                 </div>
                                 
                                 <div class="col-md-3 col-sm-6 col-xs-6">
                                     <div class="input-group input-group-sm">
                                         <span class="input-group-addon" style="background: #fff;">max pt</span>
-                                        <input type="text" class="form-control" id="input_gmax">
+                                        <input type="number" class="form-control" id="input_gmax">
                                     </div>    
                                 </div>
                                 
@@ -210,20 +210,16 @@
                     updateFields(3, val);
                 });
                 
-                input_gmin.on("keyup", function(e) {
-                    if(e.keyCode === 13) {
+                input_gmin.on("keyup change", function(e) {
                         var min = Number($(this).val());
                         var max = golden_max;
                         buildTable(min, max);
-                    }
                 });
                 
-                input_gmax.on("keyup", function(e) {
-                    if(e.keyCode === 13) {
+                input_gmax.on("keyup change", function(e) {
                         var min = golden_min;
                         var max = Number($(this).val());
                         buildTable(min, max);
-                    }
                 });
                 
                 
